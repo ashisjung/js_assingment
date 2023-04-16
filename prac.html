@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1">Open Google</button>
+
+    <script>
+        /*
+        var x="Hello";
+        console.log(window.x);   
+
+
+        console.og("Inner width="+window.innerWidth);
+        console.og("Inner height="+window.innerHeight);
+        console.og("=Outer Width="+window.outerWidth);
+        console.og("=Outer Height="+window.outerHeight);
+        */
+       let btn1 = document.getElementById('btn1');
+       function openwindow()
+       {
+        window.open("https://www.google.com",'google');
+       }
+       btn1.addEventListener('click',openwindow);
+
+               
+    </script>
+</body>
+</html>

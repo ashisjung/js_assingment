@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="clock"> </h1>
+    DOB: <input type="text" id="dob">
+    <button id="btn">Calculate age</button>
+    <h4 id="age"></h4>
+
+
+    <script>
+        window.setInterval(displayClock,1000);
+        function displayClock()
+        {
+            let d = new Date();
+            let h = d.getHours();
+            let m = d.getMinutes();
+            let s = d.getSeconds();
+
+            document.getElementById('clock').innerHTML=h+' : '+ m+' : '+s;
+        }
+
+        function CalculateAge()
+        {
+            let db = document.getElementById('dob').value;
+            let dob = new Date(db);
+            let age = findAge(dob);
+            document.getElementById('age').innerHTML="Your age is "+age +"years";
+        }
+        function findAge(dob)
+        {
+            let currentDate = new Date();
+            let yearDiff = currentDate.getFullYear()-dob.getFullYear();
+            let monthDiff = currentDate.getMonth()-dob.getMonth();
+            if(monthDiff<0)
+            {
+                yearDiff--;
+            }
+            return yearDiff;
+        }
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click',CalculateAge);
+    </script>
+</body>
+</html>
